@@ -53,7 +53,7 @@ def treat_date_cols(df_original,dc,nc,cc):
                                     -1,                                 
                                     latest_date - df[col]     
                                         )
-            df['HasGarage'] = df[col].notnull().astype(int)
+            df[col]=df[col].fillna(0)
         if col =='YrSold' : 
             df[col]=df[col].astype('category')
             cc.append(col)
